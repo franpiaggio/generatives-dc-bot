@@ -293,11 +293,8 @@ function arteBienvenido(_text) {
 	var grd = ctx.createRadialGradient(w/2, h/2, 0, w/2, h/2, 200);
 	//grd.addColorStop(0, "rgba(" + r1 + "," + g1 + "," + b1 + ",1.0)");
 	grd.addColorStop(1, "rgba(255,255,255,0.5)");
-
 	grd.addColorStop(1, "rgba(" + r2 + "," + g2 + "," + b2 + ",1.0)");
 	
-
-
 	let fs = fontsize1;
 	ctx.fillStyle = "rgba(0,0,0,0.8)";
 	ctx.font = fs*1.0 + "px Arial";
