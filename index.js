@@ -275,7 +275,7 @@ function arteBienvenido(_text) {
 	grd2.addColorStop(1, "rgba(" + r1 + "," + g1 + "," + b1 + ",0.8)");
 	
 
-
+	//doiqwdqwjmipfjqw fmpoaiwemf iop
 	ctx.beginPath();
 	ctx.lineWidth = "2";
 	ctx.strokeStyle = "rgba(" + r1 + "," + g1 + "," + b1 + ",1.0)";
