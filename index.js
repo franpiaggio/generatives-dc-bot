@@ -39,7 +39,9 @@ client.on('interactionCreate', async interaction => {
 		interaction.reply({ files: [hacerArteShader()] });
 	} else if (commandName == "bienvenidatest") {
 		interaction.reply({ files: [arteBienvenido(interaction.user.username)] });
-	}
+	} else if (commandName == "generarprompt") {
+			await interaction.reply(generateName());
+		}
 });
 
 client.on('guildMemberAdd', member => {
@@ -242,6 +244,208 @@ function drawCircle(ctx, x, y, radius, fill, stroke, strokeWidth) {
 		ctx.strokeStyle = stroke
 		ctx.stroke()
 	}
+}
+
+
+
+
+function generateName(){
+	let st ="";
+	
+	let genst = ["generative system","generator","generative art"]
+
+  let adjetivos = ["black","green","red","blue","yellow","white","multicolor","HSB based",
+				   "vibrant","mystical","abstract","unique","intuitive","audiorhymic",
+				   "flowing","swirling","dramatic","primitive","strong","sublime","elegant",
+				   "sophisticated","beautiful","cute","enchanting","brilliant","logical","captivating",
+				"extraordinary","expressive","calming","inspiring","contemplative","colorful","passionate","planned","emotional",
+			"suggestive","decadent","irrational","poetic","moving","meditative","mesmerizing","monumental","mysterious","gorgeous",
+			"relevant","important","raw","indulgent","delicate","simple","bold","subtle","coonstrating","rough","uneven",
+			"organic","curvaceous","geometric","angular","intimate","strong","naturalistic",
+			"distorted","brash","bright","clear","cool","dull","exciting","garish","grayed","pale","polychromed","primary","saccharine"
+		,"sweet","warm"]
+
+   let palabra1 = ["dogs","cats","birds","chair","table","people",
+   "history","exams","universitys",
+   "meaning","blood","hearts",
+   "photo","coocking recipes",
+   "alcohol bottles","steaks","fire","wind","water","earth",
+   "guitar","violin","piano","lab","police","restaurant","vehicle","airport","farmer","revolution","grocery store",
+   "honey","salad","apple","diamond","hat","shirts","surgery","money",
+   "books","markets","school","bosses","sports","answers",
+   "gardens","president","senator",
+   "construction worker","proletariat","elite","oligarchy","poor","rich",
+   "robot","android","cyborg","teacher",
+   "accountant","actor","actress","astronomer"
+   ,"baker","bricklayer","bus driver","butcher","carpenter",
+   "chef","cook","cleaner","dentist","designer","doctor","dustman","engineer","factory worker",
+   "farmer","firefighter","fisherman","florist","gardener"
+   ,"hairdresser","journalist","judge","lawyer","lecturer","librarian","lifeguard","mechanic"
+   ,"model","nurse","optician","painter","pharmacist","photographer","pilot","plumber",
+ "politician","policeman","policewoman","postman","real estate agent"
+ ,"recepcionist","scientist","secretary","shop assistant","soldier","translator","veterinary"
+ ,"window cleaner","ship","water","rose","hydrangea","bleeding-heart",
+ "cherry blossom","orchid","tulip","peony","lily","freesia","lotus flower","spikenard","dahlia",
+ "chrysanthemum","carnation","morning glory","gardenias","sunflowers","daffodils","lantanas",
+"marigolds","poppies","magnolias","zinnias","ulmus americana","nothofagus moorei",
+"argania spinosa","aspen tree","Taxodium distichum","poaceae","adansonia","fagus","jacaranda",
+"camel thorn","cannonball tree","ginkgo","dracanea cinnabari","flamboyant","giant sequioa","pinus logaeva",
+"acer palmatum","prunus cerasus","juniperus","ceiba pentandra","rhizophora","abies religiosa",
+"populus tremuloides","pinus pinoideae","pinus ponderosa","eucalyptus deglupta","ericaceae","ceiba pentandra",
+"quercus virginiana","ficus","acer psuedoplatanus","tibetan cherry tree","fabaceae leguminosae","asparagaceae",
+"prunus serrula","fabaceae geuminosae","baby","woman","man","businessman","businesswoman","photograph",
+"cold","heat","morning","afternoon","kid","child","van","taxi","police car","bus","ambulance","skateboard","baby carriage","bicyble","mountain bike",
+"scooter","fire engine","crane","forklift","tractor","recycling truck","cementmixer","dump truck","subway","aerial tramway","helipcoter","airplane","ballon","tram",
+"carriage","rowboat","boat","train","Hammer","Screwdriver","Mallet","Axe","Saw","Scissors","Chisel","Pliers","Drill","Tape measure","Electric drill","Circular saw",
+"soldering iron","electric screwdriver","chainsaw","nail gun","hammer"]
+
+
+   let palabra2w = ["a hat","a dress","a bottle","a dog","a cat","a shoe","a shirt"];
+
+   let animal = ["Aardvark","Alpaca","Alligator","Albatross","Anaconda","Ant",
+				 "Axolotl","Armadillo","Baboon","Bee","Bat",
+				 "Bird","Bear","Bongo","Capybara","Camel","Chihuaha",
+				 "Chicken","Chameleon","Ferret","Crab","Cow","Cricket","Cockroach",
+				 "Crow","Deer","Dodo","Dinosaur","Wolf","Duck","Gecko","Giraffe","Gorilla","Grasshopper","Hamster",
+				 "Hyena","Iguana","Jaguar","Lemur","Lobster","Maggot","Ostrich","Pangolin",
+				 "Pelican","Pig","Pug","Rabbit","Rhino","Shrimp","Squirrel","Squid","Terrier","Tortoise","Worm","Yak",
+				 "Zebra","Nicobar Pigeon","Golden Pheasant","Scarlet Macaw","Bluebird of Paradise","Flamingo","Red-necked Tanager","Blue Jay","Mandarin Duck",
+				 "Peacock","Blue Crowned Pigeon","Red Crested Turaco","Horned Sungem","Snowy Owl","Keel-billed Toucan","Atlantic Puffin","Blue/Azure Kingfisher",
+				 "Painted Bunting","Gouldian Finch","Cockatoo","Bohemian Waxwing","Wood Duck","Paradise Tanager","Hyacinth Macaw","Rainbow Lorikeet","Purple Gallinule"]
+
+	let sujetofinal = palabra1.concat(animal);
+   
+	let materials = ["chalk","colored pencil","conte","egg tempera","found materials",
+					 "ink","oil","pastel","pencil","photograph","print","tempera","vine charcoal","watercolor"]
+	
+	let time = ["60's","70's","80's","90's","medieval"]
+
+	let place = ["the lake","the mountains","a kitchen","a living room","a fairy tale world",
+				"Capadocia","buenos aires","the forest" ,"the beach","Buenos Aires","New York","Europe"
+				,"Asia","China","Japan","Mongolia","Peru","Bolivia","Mexico","the caribe","a pirate ship","the moon","Jupiter",
+				"in Antartica","a stage set","a tv set","a domestic interior","a comercial interior","a public building","a inflatable",
+				"parade floats","a hot air ballon","installation","a theme park","a educational space"]
+
+	let monumentos = ["Hagia Sophia","The guggenheim","Taj Mahal"," Château de Chenonceau","Niterói Contemporary Art Museum",
+						"acropolis","Musée d’Orsay ","The Gherkin","Metropolitan Cathedral of Brasília",
+						"Mosque of Córdoba ","Westminster Abbey "," The Colosseum","One World Trade Center ",
+						"The Lotus Temple ","St. Basil’s Cathedral ","Dome of the Rock","Casa Milà","Forbidden City",
+						"Sagrada Família Barcelona Spain","Bran Castle"," Angkor Wat","Sultan Ahmed Mosque",
+						"Konark Sun Tower ","Sacré-Coeur","Potala Palace","Musée du Louvre","Fallingwater",
+						"The Pantheon","Space Needle","Villa Savoye","Burj Khalifa","Leaning Tower of Pisa",
+						"The Flatiron Building","The Sistine Chapel"];
+
+
+	let cameraangle = ["extreme close up","close up","medium Shot",
+						"long shot","extreme long shot","overhead view","low angle","aerial view","tilted frame","over the shoulder shot"];
+	
+	let camerasettigns = ["fast shutter speed","slow shutter speed","bokeh",
+						"tilt shift","motion blur","telephoto lens","macro lens",
+						"macro photo","wide angle lens","fish eye lens","deep depth of field"];
+	let luzprompt = ["golden hour","blue hour","midday","overcast","warm lighting","cold","flash photography","colourful lighting",
+					 "high-key lightining","low key lighting","backlighting","backlit","Studio lightning"]
+
+	let photoprocess = ["kodachrome","autochrome","lomography","polaroid","cameraphone","CCTV","disposable camera","daguerrotype",
+					 "camera obscura","double exposure","cyanotype","redscale photography","infrared photography","bleach bypass",
+					 "instagram","hipstamatic","colour splash","solarised","anaglyph"]
+	
+	let ilustration = ["Stencil","street art","backsy","ballpoint pen art",
+						"pencil sketch","pencil drawing","charcoal sketch","woodcut","field jornal line art","colouring in sheet","etching ilustration",
+						"crayon","child drawing","acrylic on canvas","watercolor",
+						"coloured pencil","oil painting","ukiyo","chinese watercolor","pastels","airbrush","collage","magazine collage",
+						"photocollage","vector art","screen painting","low poly","layered paper","sticker illustration","storybook","digital painting",
+					"blueprint","patent drawing","cutaway","IKEA","instruction manual","botanical illustration","mythological map","voynich manuscript",
+					"scientific diagram","voroni diagram","Isometric 3D","3D render","houdini 3D","octane 3D","claymation","Aardman animation","felt pieces",
+					"fabric pattern","black velvet","scratch art","foil art","gold on black","perler beads","tatto","comic book art","pixar"
+					,"studio ghibli","vintage disney","pixel art","1990 disney","1970s grainy vintage"]
+
+	let arthistory1 = ["cave paintings","ancient egyptian mural","ancient egypt papyrus","fayum portrait","decorative minoan mural","roman mosaic",
+					  "ancient roman painting","nurember chronicle","byzantine icon"
+					  ,"giilded codex","renaissance painting","mannerism","manerist","baroque","rococo","neoclassicism","realism","art nouveau",
+					  "impressionism","post-impressionism","symbolist painting","art deco","abstract expressionisim",
+					  "colour field painting","cubism","constructivist","dada","de stijl","expressionism","fauvism"
+					  ,"futurism","metaphysical painting","surrealism","pop art","street art","suprematism","mexican muralism","neo-expressionism","oprhism"]
+	
+	let statue = ["bronze statue","marble statue","terracotta warriors","jade sculpture",
+				   "gold","silver","butter sculpture","sand sculpture","topiary","ice carving","ice carving","plastic","fibergrass"]
+
+	let wave = ["cyberpunk","synthwave","windows 98","steampunk","solarpunk","cybercity"]
+	st+=adjetivos[floor(genR(adjetivos.length-1))] +" ";
+	if(genR(1) < .3){
+		st+="and "+adjetivos[floor(genR(adjetivos.length-1))] + " " ;    
+	}
+
+	if(genR(1) < .5){
+		st+=time[floor(genR(time.length-1))]+" ";
+	} 
+	st+=sujetofinal[floor(genR(sujetofinal.length-1))];
+
+	if(genR(1) < .25){
+
+		let st2 = materials[floor(genR(materials.length-1))];
+		if(st2){
+		st+=" in " + st2+" technique";
+		}
+	}
+
+	if(genR(1) < .5){
+		let st2 =place[floor(genR(place.length-1))]
+		
+		if(st2)   st+=" in "+st2;
+	}
+	if(genR(1) < .15){
+		let st2 = camerasettigns[floor(genR(place.length-1))];
+	 
+		if(st2) st+=", " + st2;
+	}
+	if(genR(1) < .15){
+
+		let st2 = luzprompt[floor(genR(luzprompt.length-1))];
+	   
+		if(st2)  st+=", " + st2;
+	}
+	if(genR(1) < .15){
+		let st2 = photoprocess[floor(genR(photoprocess.length-1))];
+		
+		if(st2)st+=", " + st2;
+	}
+	if(genR(1) < .15){
+
+		let st2 =  ilustration[floor(genR(ilustration.length-1))];
+		
+		if(st2) st+=", " + st2;
+	}
+	if(genR(1) < .15){
+		let st2 = arthistory1[floor(genR(arthistory1.length-1))];
+		if(st2)  st+=", " + st2;
+	}
+	if(genR(1) < .15){
+		let st2 = statue[floor(genR(statue.length-1))];
+		if(st2)  st+=", " + st2;
+	}
+	if(genR(1) < .5){
+		let st2 = wave[floor(genR(wave.length-1))];
+		if(st2)  st+=", " + st2;
+	}
+	//st+=" " + genst[floor(genR(genst.length-1))];
+	st+="."
+
+	st.toLowerCase();
+	st = capitalizeFirstLetter(st);
+	return st;
+}
+
+function floor(v){
+	return Math.floor(v);
+}
+function genR(min, max) {
+	let result = 0;
+	if (!max) { result = Math.random() * (min - 0) + 0; } else { result = Math.random() * (max - min) + min; }
+	return result;
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 client.login(process.env.DC_TOKEN);
