@@ -11,6 +11,7 @@ const commands = [
 	new SlashCommandBuilder().setName('hacerarte').setDescription('El bot es un artista y genera una obra de arte'),
 	new SlashCommandBuilder().setName('hacerarte2').setDescription('El bot es un artista y genera una segunda obra de arte'),
 	new SlashCommandBuilder().setName('bienvenidatest').setDescription('Format mensaje bienvenida')
+	new SlashCommandBuilder().setName('pruebashader').setDescription('Format mensaje bienvenida')
 ]
 	.map(command => command.toJSON());
 
