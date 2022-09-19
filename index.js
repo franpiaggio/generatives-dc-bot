@@ -1,7 +1,7 @@
 require('dotenv').config();
 const { Client, Intents, Message, MessageAttachment, MessageEmbed } = require('discord.js');
-const Canvas = require('canvas');
-
+const {registerFont, createCanvas} = require('canvas');
+registerFont('roboto.ttf', { family: 'Roboto' })
 const client = new Client({
 	intents: [
 		Intents.FLAGS.GUILDS,
@@ -56,7 +56,7 @@ function hacerArte2() {
 	let w = 1200;
 	let h = 1200;
 
-	const canvas = Canvas.createCanvas(w, h);
+	const canvas = createCanvas(w, h);
 	const context = canvas.getContext('2d');
 
 	let x2 = w * Math.random();
@@ -112,7 +112,7 @@ function arteBienvenido(_text) {
 	let w = 800;
 	let h = 800;
 
-	const canvas = Canvas.createCanvas(w, h);
+	const canvas = createCanvas(w, h);
 	const ctx = canvas.getContext('2d');
 	let x2 = w * Math.random();
 	let y2 = h * Math.random();
@@ -170,16 +170,16 @@ function arteBienvenido(_text) {
 
 	let fs = fontsize1;
 	ctx.fillStyle = "rgba(0,0,0,0.8)";
-	ctx.font = fs * 1.0 + "px Arial";
+	ctx.font = fs * 1.0 + "px Roboto";
 	ctx.fillText(finaltest, w / 2 - 3, h / 2 - 3);
 
 
 	ctx.fillStyle = "rgba(255,255,255,0.5)";
-	ctx.font = fs * 1.0 + "px Arial";
+	ctx.font = fs * 1.0 + "px Roboto";
 	ctx.fillText(finaltest, w / 2 + 3, h / 2 + 3);
 
 	ctx.fillStyle = grd;
-	ctx.font = fs + "px Arial";
+	ctx.font = fs + "px Roboto";
 	ctx.fillText(finaltest, w / 2, h / 2);
 	return canvas.toBuffer();
 }
@@ -188,7 +188,7 @@ function hacerArte1() {
 	let w = 800;
 	let h = 800;
 
-	const canvas = Canvas.createCanvas(w, h);
+	const canvas = createCanvas(w, h);
 	const context = canvas.getContext('2d');
 
 	let x2 = w * Math.random();
@@ -219,7 +219,7 @@ function hacerArte1() {
 }
 
 function hacerArteShader() {
-	const canvas = Canvas.createCanvas(w, h);
+	const canvas = createCanvas(w, h);
 	return canvas.toBuffer();
 }
 
