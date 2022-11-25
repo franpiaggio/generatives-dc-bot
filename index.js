@@ -31,6 +31,14 @@ client.on('interactionCreate', async interaction => {
 		amor.push("Sos lo mejor que me paso en la vida ");
 		amor.push("Me encantaria pasar una noche romantica contigo");
 		amor.push("Algo mas normal");
+		amor.push("Me encanta como programas");
+		amor.push("Estoy orgulloso de vos");
+		amor.push("Si no fullminteaste esta vez , no te preocupes, la proxima sera!");
+		amor.push("Sos unx gran artista");
+		amor.push("Sos unx gran programadorx");
+		
+		
+		
 		let index = Math.floor(Math.random() * amor.length);
 		await interaction.reply(amor[index] + "  " + interaction.user.username);
 	} else if (commandName == "hacerarte") {
